@@ -8,6 +8,9 @@ total += len(cust)
 
 for c in mbr_cust:
     if c > 0:
-        total += c // mbr_max + 1
+        if c % mbr_max == 0:
+            total += c // mbr_max
+        else:
+            total += c // mbr_max + 1
 
 print(total)
