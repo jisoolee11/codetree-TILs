@@ -4,11 +4,8 @@
 |---|---|
 |[Greedy](https://www.codetree.ai/training-field/search/?tags=Greedy)|[기출문제](https://www.codetree.ai/training-field/frequent-problems)|
 
-
-
-
-
-
+## 시간 복잡도
+- 전체 코드의 시간 복잡도 -> O(n)
 
 
 [b5]: https://img.shields.io/badge/Bronze_5-%235D3E31.svg
@@ -31,6 +28,7 @@
 [p3]: https://img.shields.io/badge/Platinum_3-%2376DDD8.svg
 [p2]: https://img.shields.io/badge/Platinum_2-%2376DDD8.svg
 [p1]: https://img.shields.io/badge/Platinum_1-%2376DDD8.svg
+
 [passed]: https://img.shields.io/badge/Passed-%23009D27.svg
 [failed]: https://img.shields.io/badge/Failed-%23D24D57.svg
 [easy]: https://img.shields.io/badge/쉬움-%235cb85c.svg?for-the-badge
