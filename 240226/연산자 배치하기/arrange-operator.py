@@ -2,7 +2,7 @@ n = int(input())
 num = list(map(int, input().split()))
 operator_cnt = list(map(int, input().split()))
 operators = []
-min_result, max_result = 1e9, -1e9
+min_result, max_result = int(1e9), int(-1e9)
 
 def calculate():
     val = num[0]
