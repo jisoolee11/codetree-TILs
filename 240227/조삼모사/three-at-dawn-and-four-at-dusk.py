@@ -1,7 +1,11 @@
+import sys
+
+INT_MAX = sys.maxsize
+
 n = int(input())
 P = [list(map(int, input().split())) for _ in range(n)]
 evening = [False] * n
-result = 100
+result = INT_MAX
 
 
 def calulate():
