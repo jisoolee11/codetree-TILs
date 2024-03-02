@@ -1,3 +1,8 @@
+import sys
+
+INT_MAX = sys.maxsize
+
+
 def calc():
     morning_work = 0
     evening_work = 0
@@ -33,7 +38,7 @@ n = int(input())
 works = [list(map(int, input().split())) for _ in range(n)]
 evening = [False] * n
 
-result = 100
+result = INT_MAX
 
 dfs(0, 0)
 print(result)
