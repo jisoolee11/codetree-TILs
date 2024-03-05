@@ -48,11 +48,11 @@ def cut_down():
 
 n, m = map(int, input().split())
 board = [list(map(int, input().split())) for _ in range(n)]
-d, p = map(int, input().split())
 dx, dy = [0, -1, -1, -1, 0, 1, 1, 1], [1, 1, 0, -1, -1, -1, 0, 1]
 nutrients = [(n-2, 0), (n-2, 1), (n-1, 0), (n-1, 1)]
 
 for _ in range(m):
+    d, p = map(int, input().split())
     n_move()
     grow()
     cut_down()
