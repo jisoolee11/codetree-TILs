@@ -33,11 +33,11 @@ def bfs(start_x, start_y):
 
 n, L, R = map(int, input().split())
 eggs = [list(map(int, input().split())) for _ in range(n)]
-visited = [[0] * n for _ in range(n)]
 dx, dy = [-1, 0, 1, 0], [0, 1, 0, -1]
 
 cnt = 0
 while True:
+    visited = [[0] * n for _ in range(n)]
     is_move = False
     for i in range(n):
         for j in range(n):
@@ -49,7 +49,7 @@ while True:
 
     if is_move:
         cnt += 1
-
-    break
+    else:
+        break
 
 print(cnt)
