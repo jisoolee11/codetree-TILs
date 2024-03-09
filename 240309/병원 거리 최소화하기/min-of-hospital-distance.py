@@ -1,7 +1,11 @@
+import sys
+
+INF_MAX = sys.maxsize
+
 def calc():
     total = 0
     for px, py in person:
-        min_h = 100
+        min_h = INF_MAX
         for hx, hy in selected_h:
             dist = abs(hx-px) + abs(hy-py)
             min_h = min(min_h, dist)
@@ -37,7 +41,7 @@ for i in range(n):
 
 visited = [False] * len(hospitals)
 selected_h = []
-result = 100
+result = INF_MAX
 
 backtracking(0, 0)
 
