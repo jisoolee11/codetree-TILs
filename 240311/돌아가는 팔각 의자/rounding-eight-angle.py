@@ -57,7 +57,7 @@ def calc():
             elif idx == 1:
                 result += 2
             elif idx == 2:
-                reult += 4
+                result += 4
             else:
                 result += 8
 
