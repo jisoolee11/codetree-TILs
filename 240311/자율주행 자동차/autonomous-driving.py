@@ -32,6 +32,7 @@ while True:
         ny = start_y + dy[(d-2)%4]
         if board[nx][ny] == 0:
             start_x, start_y = nx, ny
+            dir_check = [True] * 4
         else:
             break
 
