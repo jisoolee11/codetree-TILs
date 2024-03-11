@@ -15,36 +15,31 @@ def left_check(idx):
 
 
 def rotate_dir():
-    rotate = [0, 0, 0, 0]
-    rotate[n-1] = d
-    while 0 in rotate:
-        for i in range(4):
-            if rotate[i] != 0:
-                if i == 0:
-                    if rotate[i+1] == 0:
-                        if not right_check(i):
-                            rotate[i+1] = -rotate[i]
-                        else: 
-                            rotate[i+1] = 2
-                elif i == 3:
-                    if rotate[i-1] == 0:
-                        if not left_check(i):
-                            rotate[i-1] = -rotate[i]
-                        else: 
-                            rotate[i-1] = 2
-                else:
-                    if rotate[i+1] == 0:
-                        if not right_check(i):
-                            rotate[i+1] = -rotate[i]
-                        else:
-                            rotate[i+1] = 2
-                    if rotate[i-1] == 0:
-                        if not left_check(i):
-                            rotate[i-1] = -rotate[i]
-                        else:
-                            rotate[i-1] = 2
-
-    return rotate
+    for i in range(4):
+        if t_rotate[i] != 0:
+            if i == 0:
+                if t_rotate[i+1] == 0:
+                    if not right_check(i):
+                        t_rotate[i+1] = -t_rotate[i]
+                    else: 
+                        t_rotate[i+1] = 2
+            elif i == 3:
+                if t_rotate[i-1] == 0:
+                    if not left_check(i):
+                        t_rotate[i-1] = -t_rotate[i]
+                    else: 
+                        t_rotate[i-1] = 2
+            else:
+                if t_rotate[i+1] == 0:
+                    if not right_check(i):
+                        t_rotate[i+1] = -t_rotate[i]
+                    else:
+                        t_rotate[i+1] = 2
+                if t_rotate[i-1] == 0:
+                    if not left_check(i):
+                        t_rotate[i-1] = -t_rotate[i]
+                    else:
+                        t_rotate[i-1] = 2
 
 
 def calc():
@@ -67,12 +62,14 @@ k = int(input())
 result = 0
 for _ in range(k):
     n, d = map(int, input().split())
-    r_dir = rotate_dir()
+    t_rotate = [0, 0, 0, 0]
+    t_rotate[n-1] = d
+    rotate_dir()
     for idx, t in enumerate(table):
-        if r_dir[idx] == 2:
+        if t_rotate[idx] == 2:
             continue
         else:
-            t.rotate(r_dir[idx])
+            t.rotate(t_rotate[idx])
 
 calc()
 
