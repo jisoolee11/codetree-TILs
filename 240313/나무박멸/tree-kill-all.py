@@ -42,14 +42,14 @@ def tree_herbicide():
     for x in range(n):
         for y in range(n):
             cnt = 0
-            if board[x][y] >= 0:
+            if board[x][y] > 0:
                 cnt += board[x][y]
                 for i in range(4, 8):
                     for j in range(1, k+1):
                         nx = x + (dx[i])*j
                         ny = y + (dy[i])*j
                         if 0 <= nx < n and 0 <= ny < n:
-                            if board[nx][ny] >= 0:
+                            if board[nx][ny] > 0:
                                 cnt += board[nx][ny]
                             else:
                                 break
@@ -69,23 +69,30 @@ result = 0
 for _ in range(m):
     growth = tree_growth()
     tree_propagation(growth)
-    max_herbicide = tree_herbicide()
-    result += max_herbicide[2]
-
-    herbicide[max_herbicide[0]][max_herbicide[1]] = c + 1
-    for i in range(4, 8):
-        for j in range(1, k+1):
-            nx = max_herbicide[0] + (dx[i])*j
-            ny = max_herbicide[1] + (dy[i])*j
-            if 0 <= nx < n and 0 <= ny < n:
-                herbicide[nx][ny] = c + 1
-                if board[nx][ny] == -1 or board[nx][ny] == 0:
-                    break
 
     for i in range(n):
         for j in range(n):
             if herbicide[i][j] > 0:
                 herbicide[i][j] -= 1
-                board[i][j] = 0
+
+    max_herbicide = tree_herbicide()
+    result += max_herbicide[2]
+    if board[max_herbicide[0]][max_herbicide[1]] > 0:
+        board[max_herbicide[0]][max_herbicide[1]] = 0
+        herbicide[max_herbicide[0]][max_herbicide[1]] = c
+        for i in range(4, 8):
+            for j in range(1, k+1):
+                nx = max_herbicide[0] + (dx[i])*j
+                ny = max_herbicide[1] + (dy[i])*j
+                if nx < 0 or nx >= n or ny <0 or ny >= n:
+                    break
+                if board[nx][ny] == -1:
+                    break
+                if board[nx][ny] == 0:
+                    herbicide[nx][ny] = c 
+                    break
+                
+                board[nx][ny] = 0
+                herbicide[nx][ny] = c 
 
 print(result)
