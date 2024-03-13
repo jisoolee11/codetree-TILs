@@ -67,11 +67,6 @@ herbicide = [[0] * n for _ in range(n)]
 result = 0
 
 for _ in range(m):
-    for i in range(n):
-        for j in range(n):
-            if herbicide[i][j] > 0:
-                herbicide[i][j] -= 1
-                
     growth = tree_growth()
     tree_propagation(growth)
     max_herbicide = tree_herbicide()
@@ -90,6 +85,7 @@ for _ in range(m):
     for i in range(n):
         for j in range(n):
             if herbicide[i][j] > 0:
+                herbicide[i][j] -= 1
                 board[i][j] = 0
 
 print(result)
