@@ -42,14 +42,14 @@ def tree_herbicide():
     for x in range(n):
         for y in range(n):
             cnt = 0
-            if board[x][y] > 0:
+            if board[x][y] >= 0:
                 cnt += board[x][y]
                 for i in range(4, 8):
                     for j in range(1, k+1):
                         nx = x + (dx[i])*j
                         ny = y + (dy[i])*j
                         if 0 <= nx < n and 0 <= ny < n:
-                            if board[nx][ny] > 0:
+                            if board[nx][ny] >= 0:
                                 cnt += board[nx][ny]
                             else:
                                 break
