@@ -63,3 +63,7 @@ while True:
         A = rotate_270(A)
 
     t += 1
+
+    if t > 100:
+        print(-1)
+        break
