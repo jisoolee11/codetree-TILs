@@ -20,7 +20,7 @@ def diffusion():
 
 def find_storm():
     for x in range(n):
-        for y in range(n):
+        for y in range(m):
             if dust[x][y] == -1:
                 storm = (x, y)
                 return storm
