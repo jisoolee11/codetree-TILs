@@ -4,7 +4,7 @@ def dice_move(dice, d):
     elif d == 2:
         new_dice = [dice[2], dice[1], dice[5], dice[3], dice[0], dice[4]]
     elif d == 3:
-        new_dice = [dice[1], dice[5], dice[2], dice[0], dice[0], dice[3]]
+        new_dice = [dice[1], dice[5], dice[2], dice[0], dice[4], dice[3]]
     elif d == 4:
         new_dice = [dice[3], dice[0], dice[2], dice[5], dice[4], dice[1]]
 
@@ -17,6 +17,8 @@ direction = list(map(int, input().split()))
 dx, dy = [0, 0, 0, -1, 1], [0, 1, -1, 0, 0]
 # 위, 앞, 오, 뒤, 왼, 아
 dice = [0, 0, 0, 0, 0, 0]
+if board[x][y] != 0:
+    dice[-1] = board[x][y]
 
 for d in direction:
     nx = x + dx[d]
