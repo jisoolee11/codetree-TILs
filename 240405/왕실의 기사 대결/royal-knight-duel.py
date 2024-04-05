@@ -37,7 +37,7 @@ def bfs(i, d):
 
     for x in range(L):
         for y in range(L):
-            if new_board[x][y] and new_board[x][y] in remove:
+            if new_board[x][y] in remove:
                 new_board[x][y] = 0
 
     knights = [[] for _ in range(N+1)]
